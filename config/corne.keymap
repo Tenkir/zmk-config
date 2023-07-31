@@ -65,6 +65,6 @@
 &kp LSHFT   &trans    &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
                         &trans &trans   &kp SPACE   &kp RET   &mo 3    &kp RALT
                         >;
-                }
+                };
         };
 };
