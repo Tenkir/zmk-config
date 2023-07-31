@@ -9,27 +9,6 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-        macros {
-                lock_screen: lock_screen {
-                        compatible = "zmk,behavior-macro";
-                        label = "Lock Screen";
-                        #binding-cells = <0>;
-                        bindings = <&macro_press &kp LEFT_GUI>, <&macro_press &kp L>, <&macro_release &kp LEFT_GUI>;
-                };
-                decrease_indent: decrease_indent {
-                        compatible = "zmk,behavior-macro";
-                        label = "Decrease Indentation";
-                        #binding-cells = <0>;
-                        bindings = <&macro_press &kp LCTRL>, <&macro_press &kp LBKT>, <&macro_release &kp LCTRL>;
-                };
-                increase_indent: increase_indent {
-                        compatible = "zmk,behavior-macro";
-                        label = "Increase Indentation";
-                        #binding-cells = <0>;
-                        bindings = <&macro_press &kp LCTRL>, <&macro_press &kp RBKT>, <&macro_release &kp LCTRL>;
-                };
-        };
-
         keymap {
                 compatible = "zmk,keymap";
 
@@ -46,12 +25,13 @@
                 &kp LCTRL &mo 1 &kp SPACE /*XX*/  &kp RET &mo 2  &kp RALT
                         >;
                 };
+
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |  `   |  1  |  2  |  3  |  4  |   5   | XX |  6  |  7  |  8  |  9  |  0  | BKSP |
 // |      |     |     |  [  |  {  |   (   | XX |  )  |  }  |  ]  |     |     |      |
 // | SHFT |     |     |     |     |   -   | XX |  +  |  =  |     |     |     |      |
-//                    | GUI | UP  |Pl/PAUS| XX | ENT |     | ALT |
+        //                    | GUI | UP  |Pl/PAUS| XX | ENT |     | ALT |
                         bindings = <
 &kp GRAVE &kp N1  &kp N2   &kp N3   &kp N4    &kp N5    /*XX*/  &kp N6   &kp N7    &kp N8   &kp N9  &kp N0 &kp BSPC
 &trans    &trans  &trans   &kp LBKT &kp LBRC  &kp LPAR  /*XX*/  &kp RBRC &kp RBRC  &kp RBKT &trans  &trans &trans
@@ -81,10 +61,10 @@
 // |      |      | MUTE |VOLDWN|VOLUP| BT5 | XX |       |     |     |     |     |      |
 //                      |      |     |     | XX |       |     |     |
                         bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2      &bt BT_SEL 3 &bt BT_SEL 4  /*XX*/  &trans   &trans        &trans      &trans  &trans &lock_screen
-&trans      &trans        &decrease_indent &increase_indent  &trans       &trans        /*XX*/  &kp HOME &kp PAGE_DOWN &kp PAGE_UP &kp END &trans &trans
-&trans      &trans        &kp K_MUTE         &kp K_VOL_DN      &kp K_VOL_UP &trans        /*XX*/  &trans   &trans        &trans      &trans  &trans &trans
-                                           &trans            &trans       &trans        /*XX*/  &trans   &trans        &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4 /*XX*/  &trans   &trans        &trans      &trans  &trans &kp LG(L)
+&trans      &trans        &kp LC(LBKT)  &kp LC(RBKT)  &trans       &trans       /*XX*/  &kp HOME &kp PAGE_DOWN &kp PAGE_UP &kp END &trans &trans
+&trans      &trans        &kp K_MUTE    &kp K_VOL_DN  &kp K_VOL_UP &trans       /*XX*/  &trans   &trans        &trans      &trans  &trans &trans
+                                        &trans        &trans       &trans       /*XX*/  &trans   &trans        &trans
                         >;
                 };
         };
