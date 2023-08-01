@@ -36,7 +36,7 @@
 &kp GRAVE &kp N1  &kp N2   &kp N3   &kp N4    &kp N5    /*XX*/  &kp N6   &kp N7    &kp N8   &kp N9  &kp N0 &kp BSPC
 &trans    &trans  &trans   &kp LBKT &kp LBRC  &kp LPAR  /*XX*/  &kp RBRC &kp RBRC  &kp RBKT &trans  &trans &trans
 &trans    &trans  &trans   &trans   &trans    &kp MINUS /*XX*/  &kp PLUS &kp EQUAL &trans   &trans  &trans &trans
-                           &kp LGUI &trans    &kp C_PP  /*XX*/  &kp RET  &mo 3    &kp RALT
+                           &kp LGUI &trans    &kp C_PP  /*XX*/  &kp RET  &trans    &kp RALT
                         >;
                 };
 
@@ -50,7 +50,7 @@
 &kp TILDE &kp EXCL &kp AT &kp HASH     &kp DLLR &kp PRCNT  /*XX*/   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR &kp BSPC
 &trans    &trans   &trans &trans       &trans   &trans     /*XX*/   &kp LEFT  &kp DOWN  &kp UP          &kp RIGHT &kp BSLH &kp GRAVE
 &trans    &trans   &trans &trans       &trans   &trans     /*XX*/   &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC  &kp PIPE &kp TILDE
-                          &kp LEFT_GUI &mo 3    &kp SPACE  /*XX*/   &kp RET   &trans    &kp RALT
+                          &kp LEFT_GUI &trans   &kp SPACE  /*XX*/   &kp RET   &trans    &kp RALT
                         >;
                 };
 
@@ -66,6 +66,13 @@
 &trans      &trans        &kp K_MUTE    &kp K_VOL_DN  &kp K_VOL_UP &trans       /*XX*/  &trans   &trans        &trans      &trans  &trans &trans
                                         &trans        &trans       &trans       /*XX*/  &trans   &trans        &trans
                         >;
+                };
+        };
+        conditional_layers {
+                compatible = "zmk,conditional-layers";
+                tri_layer {
+                        if-layers = <1 2>;
+                        then-layer = <3>;
                 };
         };
 };
