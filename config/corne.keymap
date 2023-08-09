@@ -29,13 +29,13 @@
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |  `   |  1  |  2  |  3  |  4  |   5   | XX |  6  |  7  |  8  |  9  |  0  | BKSP |
-// |      |     |     |  [  |  {  |   (   | XX |  )  |  }  |  ]  |  \  |     |      |
-// | SHFT |     |     |     |     |       | XX |  -  |  +  |  =  |  _  | "|" |  ~   |
+// |      |     |     |  [  |  {  |   (   | XX |  )  |  }  |  ]  |  \  |  _  |      |
+// | SHFT |     |     |     |     |       | XX |  -  |  +  |  =  |  .  | "|" |  ~   |
 //                    | GUI | UP  |Pl/PAUS| XX | ENT |     | ALT |
                         bindings = <
 &kp GRAVE &kp N1  &kp N2   &kp N3   &kp N4    &kp N5    /*XX*/  &kp N6    &kp N7   &kp N8    &kp N9    &kp N0    &kp BSPC
-&trans    &trans  &trans   &kp LBKT &kp LBRC  &kp LPAR  /*XX*/  &kp RPAR  &kp RBRC &kp RBKT  &kp BSLH  &trans    &trans
-&trans    &trans  &trans   &trans   &trans    &trans    /*XX*/  &kp MINUS &kp PLUS &kp EQUAL &kp UNDER &kp PIPE  &kp TILDE
+&trans    &trans  &trans   &kp LBKT &kp LBRC  &kp LPAR  /*XX*/  &kp RPAR  &kp RBRC &kp RBKT  &kp BSLH  &kp UNDER &trans
+&trans    &trans  &trans   &trans   &trans    &trans    /*XX*/  &kp MINUS &kp PLUS &kp EQUAL &rans     &kp PIPE  &kp TILDE
                            &kp LGUI &trans    &kp C_PP  /*XX*/  &kp RET   &trans    &kp RALT
                         >;
                 };
