@@ -80,7 +80,7 @@
         label = "EASY_ARROW_FN";
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&kp EQUAL &kp RIGHT_ARROW>;
+        bindings = <&kp EQUAL &kp GREATER_THAN>;
       };
     };
     combos {
