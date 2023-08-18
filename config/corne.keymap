@@ -14,15 +14,15 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  ESC |  Q  |  W  |  E   |  R  |  T  | XX |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | TAB  |  A  |  S  |  D   |  F  |  G  | XX |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C   |  V  |  B  | XX |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | CTRL | LWR | SPC | XX | ENT | RSE  | ALT |
+// | ESC  |  Q  |  W  |  E   |  R   |  T  | XX |  Y  |  U   |  I  |  O  |  P  | BKSP |
+// | TAB  |  A  |  S  |  D   |  F   |  G  | XX |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | SHFT |  Z  |  X  |  C   |  V   |  B  | XX |  N  |  M   |  ,  |  .  |  /  | ESC  |
+//                    | LWR  | SHFT | SPC | XX | ENT | RSE  | ALT |
                         bindings = <
-&kp ESC   &kp Q &kp W &kp E     &kp R &kp T     /*XX*/  &kp Y   &kp U  &kp I     &kp O   &kp P    &kp BSPC
-&kp TAB   &kp A &kp S &kp D     &kp F &kp G     /*XX*/  &kp H   &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-&kp LCTRL &kp Z &kp X &kp C     &kp V &kp B     /*XX*/  &kp N   &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                &kp LSHIFT &mo 1 &kp SPACE /*XX*/  &kp RET &mo 2  &kp RALT
+&kp ESC   &kp Q &kp W &kp E      &kp R &kp T     /*XX*/  &kp Y   &kp U  &kp I     &kp O   &kp P    &kp BSPC
+&kp TAB   &kp A &kp S &kp D      &kp F &kp G     /*XX*/  &kp H   &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+&kp LCTRL &kp Z &kp X &kp C      &kp V &kp B     /*XX*/  &kp N   &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+                &mo 1 &kp LSHIFT &kp SPACE /*XX*/  &kp RET &mo 2  &kp RALT
                         >;
                 };
 
@@ -35,7 +35,7 @@
                         bindings = <
 &kp GRAVE &kp N1  &kp N2   &kp N3   &kp N4    &kp N5    /*XX*/  &kp N6    &kp N7   &kp N8    &kp N9    &kp N0    &kp BSPC
 &trans    &trans  &trans   &kp LBKT &kp LBRC  &kp LPAR  /*XX*/  &kp RPAR  &kp RBRC &kp RBKT  &kp BSLH  &kp UNDER &trans
-&trans    &trans  &trans   &trans   &trans    &trans    /*XX*/  &kp MINUS &kp PLUS &kp EQUAL &rans     &kp PIPE  &kp TILDE
+&trans    &trans  &trans   &trans   &trans    &trans    /*XX*/  &kp MINUS &kp PLUS &kp EQUAL &trans     &kp PIPE  &kp TILDE
                            &kp LGUI &trans    &kp C_PP  /*XX*/  &kp RET   &trans    &kp RALT
                         >;
                 };
