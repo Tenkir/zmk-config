@@ -33,10 +33,10 @@
 // | SHFT |     |     |     |     |       | XX |  -  |  +  |  =  |  .  | "|" |  ~   |
 //                    | GUI | UP  |Pl/PAUS| XX | ENT |     | ALT |
                         bindings = <
-&kp GRAVE &kp N1  &kp N2   &kp N3   &kp N4    &kp N5    /*XX*/  &kp N6    &kp N7   &kp N8    &kp N9    &kp N0    &kp BSPC
-&trans    &trans  &trans   &kp LBKT &kp LBRC  &kp LPAR  /*XX*/  &kp RPAR  &kp RBRC &kp RBKT  &kp BSLH  &kp UNDER &trans
-&trans    &trans  &trans   &trans   &trans    &trans    /*XX*/  &kp MINUS &kp PLUS &kp EQUAL &trans     &kp PIPE  &kp TILDE
-                           &kp LGUI &trans    &kp C_PP  /*XX*/  &kp RET   &trans    &kp RALT
+&kp GRAVE &kp N1  &kp N2   &kp N3   &kp N4   &kp N5    /*XX*/  &kp N6    &kp N7   &kp N8    &kp N9    &kp N0    &kp BSPC
+&trans    &trans  &trans   &kp LBKT &kp LBRC &kp LPAR  /*XX*/  &kp RPAR  &kp RBRC &kp RBKT  &kp BSLH  &kp UNDER &trans
+&trans    &trans  &trans   &trans   &trans   &trans    /*XX*/  &kp MINUS &kp PLUS &kp EQUAL &trans     &kp PIPE  &kp TILDE
+                           &trans   &kp LGUI &kp C_PP  /*XX*/  &kp RET   &trans    &kp RALT
                         >;
                 };
 
@@ -47,21 +47,21 @@
 // | SHFT |     |     |     |     |     | XX |     |     |     |     |     |      |
 //                    | GUI |     | SPC | XX | ENT |     | ALT |
                         bindings = <
-&kp TILDE &kp EXCL &kp AT &kp HASH     &kp DLLR &kp PRCNT  /*XX*/   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR &kp BSPC
-&trans    &trans   &trans &trans       &trans   &trans     /*XX*/   &kp LEFT  &kp DOWN  &kp UP          &kp RIGHT &trans   &trans
-&trans    &trans   &trans &trans       &trans   &trans     /*XX*/   &trans    &trans    &trans          &trans    &trans   &trans
-                          &kp LEFT_GUI &trans   &kp SPACE  /*XX*/   &kp RET   &trans    &kp RALT
+&kp TILDE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT  /*XX*/   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR &kp BSPC
+&trans    &trans   &trans &trans   &trans   &trans     /*XX*/   &kp LEFT  &kp DOWN  &kp UP          &kp RIGHT &trans   &trans
+&trans    &trans   &trans &trans   &trans   &trans     /*XX*/   &trans    &trans    &trans          &trans    &trans   &trans
+                          &trans   &trans   &kp SPACE  /*XX*/   &kp RET   &trans    &kp RALT
                         >;
                 };
 
                 top_layer {
 // -----------------------------------------------------------------------------------------
-// |BTCLR | BT1  | BT2 | BT3   | BT4 | BT5 | XX |       |     |     |     |     | LOCK |
-// |      |      |     |<Indt  |>Indt|     | XX | Home  |PgDwn|PgUp | End |     |      |
-// |      |      | MUTE |VOLDWN|VOLUP| BT5 | XX |       |     |     |     |     |      |
-//                      |      |     |     | XX |       |     |     |
+// |BTCLR | BT1  | BT2  | BT3    | BT4 | BT5 | XX |      |       |      |     | LOCK | DEL |
+// |      |      |      | <Indt  |>Indt|     | XX | Home | PgDwn | PgUp | End |      |     |
+// |      |      | MUTE | VOLDWN |VOLUP| BT5 | XX |      |       |      |     |      |     |
+//                      |        |     |     | XX |      |       |      |
                         bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4 /*XX*/  &trans   &trans        &trans      &trans  &trans &kp LG(L)
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4 /*XX*/  &trans   &trans        &trans      &trans  &kp LG(L) &kp DEL
 &trans      &trans        &trans        &kp LC(LBKT)  &kp LC(RBKT) &trans       /*XX*/  &kp HOME &kp PAGE_DOWN &kp PAGE_UP &kp END &trans &trans
 &trans      &trans        &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP &trans       /*XX*/  &trans   &trans        &trans      &trans  &trans &trans
                                         &trans        &trans       &trans       /*XX*/  &trans   &trans        &trans
@@ -73,6 +73,15 @@
                 tri_layer {
                         if-layers = <1 2>;
                         then-layer = <3>;
+                };
+        };
+        combos {
+                compatible = "zmk,combos";
+                combo_esc {
+                        timeout-ms = <50>;
+                        layers = <0>;
+                        key-positions = <33 34>;
+                        bindings = <&kp EQUAL &kp GREATER_THAN>;
                 };
         };
 };
