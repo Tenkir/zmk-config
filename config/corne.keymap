@@ -62,7 +62,7 @@
 //                      |        |     |     | XX |      |       |      |
         bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4 /*XX*/  &trans   &trans        &trans      &trans  &kp LG(L) &kp DEL
-&trans      &kp LG(PSCRN) &trans        &kp LC(LBKT)  &kp LC(RBKT) &trans       /*XX*/  &kp HOME &kp PAGE_DOWN &kp PAGE_UP &kp END &trans &trans
+&trans      &trans        &screenshot   &kp LC(LBKT)  &kp LC(RBKT) &trans       /*XX*/  &kp HOME &kp PAGE_DOWN &kp PAGE_UP &kp END &trans &trans
 &trans      &trans        &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP &trans       /*XX*/  &trans   &trans        &trans      &trans  &trans &trans
                                         &trans        &trans       &trans       /*XX*/  &trans   &trans        &trans
         >;
@@ -81,6 +81,12 @@
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&kp EQUAL &kp GREATER_THAN>;
+      };
+      screenshot: screenshot {
+        label = "SCREENSHOT";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&macro_press &kp LGUI>, <&macro_press &kp LSHFT>, <&macro_tap &kp S>, <&macro_release &kp LSHFT>, <&macro_release &kp LGUI>;
       };
     };
     combos {
