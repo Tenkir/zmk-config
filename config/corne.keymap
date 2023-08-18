@@ -9,79 +9,87 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-        keymap {
-                compatible = "zmk,keymap";
+    keymap {
+      compatible = "zmk,keymap";
 
-                default_layer {
+      default_layer {
 // -----------------------------------------------------------------------------------------
 // | ESC  |  Q  |  W  |  E   |  R   |  T  | XX |  Y  |  U   |  I  |  O  |  P  | BKSP |
 // | TAB  |  A  |  S  |  D   |  F   |  G  | XX |  H  |  J   |  K  |  L  |  ;  |  '   |
 // | SHFT |  Z  |  X  |  C   |  V   |  B  | XX |  N  |  M   |  ,  |  .  |  /  | ESC  |
 //                    | LWR  | SHFT | SPC | XX | ENT | RSE  | ALT |
-                        bindings = <
+        bindings = <
 &kp ESC   &kp Q &kp W &kp E      &kp R &kp T     /*XX*/  &kp Y   &kp U  &kp I     &kp O   &kp P    &kp BSPC
 &kp TAB   &kp A &kp S &kp D      &kp F &kp G     /*XX*/  &kp H   &kp J  &kp K     &kp L   &kp SEMI &kp SQT
 &kp LCTRL &kp Z &kp X &kp C      &kp V &kp B     /*XX*/  &kp N   &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
                 &mo 1 &kp LSHIFT &kp SPACE /*XX*/  &kp RET &mo 2  &kp RALT
-                        >;
-                };
+        >;
+      };
 
-                lower_layer {
+      lower_layer {
 // -----------------------------------------------------------------------------------------
 // |  `   |  1  |  2  |  3  |  4  |   5   | XX |  6  |  7  |  8  |  9  |  0  | BKSP |
 // |      |     |     |  [  |  {  |   (   | XX |  )  |  }  |  ]  |  \  |  _  |      |
 // | SHFT |     |     |     |     |       | XX |  -  |  +  |  =  |  .  | "|" |  ~   |
 //                    | GUI | UP  |Pl/PAUS| XX | ENT |     | ALT |
-                        bindings = <
+        bindings = <
 &kp GRAVE &kp N1  &kp N2   &kp N3   &kp N4   &kp N5    /*XX*/  &kp N6    &kp N7   &kp N8    &kp N9    &kp N0    &kp BSPC
 &trans    &trans  &trans   &kp LBKT &kp LBRC &kp LPAR  /*XX*/  &kp RPAR  &kp RBRC &kp RBKT  &kp BSLH  &kp UNDER &trans
 &trans    &trans  &trans   &trans   &trans   &trans    /*XX*/  &kp MINUS &kp PLUS &kp EQUAL &trans     &kp PIPE  &kp TILDE
                            &trans   &kp LGUI &kp C_PP  /*XX*/  &kp RET   &trans    &kp RALT
-                        >;
-                };
+        >;
+      };
 
-                raise_layer {
+      raise_layer {
 // -----------------------------------------------------------------------------------------
 // |  ~   |  !  |  @  |  #  |  $  |  %  | XX |  ^  |  &  |  *  |  (  |  )  | BKSP |
 // | CTRL |     |     |     |     |     | XX | LFT | DWN |  UP | RGT |     |      |
 // | SHFT |     |     |     |     |     | XX |     |     |     |     |     |      |
 //                    | GUI |     | SPC | XX | ENT |     | ALT |
-                        bindings = <
+        bindings = <
 &kp TILDE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT  /*XX*/   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR &kp BSPC
 &trans    &trans   &trans &trans   &trans   &trans     /*XX*/   &kp LEFT  &kp DOWN  &kp UP          &kp RIGHT &trans   &trans
 &trans    &trans   &trans &trans   &trans   &trans     /*XX*/   &trans    &trans    &trans          &trans    &trans   &trans
                           &trans   &trans   &kp SPACE  /*XX*/   &kp RET   &trans    &kp RALT
-                        >;
-                };
+        >;
+      };
 
-                top_layer {
+      top_layer {
 // -----------------------------------------------------------------------------------------
 // |BTCLR | BT1  | BT2  | BT3    | BT4 | BT5 | XX |      |       |      |     | LOCK | DEL |
 // |      |      |      | <Indt  |>Indt|     | XX | Home | PgDwn | PgUp | End |      |     |
 // |      |      | MUTE | VOLDWN |VOLUP| BT5 | XX |      |       |      |     |      |     |
 //                      |        |     |     | XX |      |       |      |
-                        bindings = <
+        bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4 /*XX*/  &trans   &trans        &trans      &trans  &kp LG(L) &kp DEL
 &trans      &trans        &trans        &kp LC(LBKT)  &kp LC(RBKT) &trans       /*XX*/  &kp HOME &kp PAGE_DOWN &kp PAGE_UP &kp END &trans &trans
 &trans      &trans        &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP &trans       /*XX*/  &trans   &trans        &trans      &trans  &trans &trans
                                         &trans        &trans       &trans       /*XX*/  &trans   &trans        &trans
-                        >;
-                };
-        };
-        conditional_layers {
-                compatible = "zmk,conditional-layers";
-                tri_layer {
-                        if-layers = <1 2>;
-                        then-layer = <3>;
-                };
-        };
-        combos {
-                compatible = "zmk,combos";
-                combo_esc {
-                        timeout-ms = <50>;
-                        layers = <0>;
-                        key-positions = <33 34>;
-                        bindings = <&kp EQUAL &kp GREATER_THAN>;
-                };
-        };
+        >;
+      };
+    };
+    conditional_layers {
+      compatible = "zmk,conditional-layers";
+      tri_layer {
+        if-layers = <1 2>;
+        then-layer = <3>;
+      };
+    };
+    macros {
+      easy_arrow_fn: easy_arrow_fn {
+        label = "EASY_ARROW_FN";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&kp EQUAL &kp RIGHT_ARROW>;
+      };
+    };
+    combos {
+      compatible = "zmk,combos";
+      combo_esc {
+        timeout-ms = <50>;
+        layers = <0>;
+        key-positions = <32 33>;
+        bindings = <&easy_arrow_fn>;
+      };
+    };
 };
